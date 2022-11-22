@@ -60,27 +60,27 @@ table {
 }
 
 .active-membership-stat {
-    background-color: blue;
-    border-radius: 5px;
-    width: fit-content;
-    padding: 0.2rem 0.3rem;
-    color: #fff;
-    min-width: 80%;
-    text-align: center;
-    font-size: 1.3rem;
+  background-color: blue;
+  border-radius: 5px;
+  width: fit-content;
+  padding: 0.2rem 0.3rem;
+  color: #fff;
+  min-width: 80%;
+  text-align: center;
+  font-size: 1.3rem;
 }
 
 .leave-misson,
 .join-misson {
-    background-color: #fff;
-    border: 1.5px solid grey;
-    border-radius: 5px;
-    max-height: 3em;
-    min-width: 80%;
-    font-size: 1.2rem;
+  background-color: #fff;
+  border: 1.5px solid grey;
+  border-radius: 5px;
+  max-height: 3em;
+  min-width: 80%;
+  font-size: 1.2rem;
 }
 
 .leave-misson {
-    border: 1.5px solid red;
-    color: red;
+  border: 1.5px solid red;
+  color: red;
 }
