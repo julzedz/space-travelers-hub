@@ -5,7 +5,7 @@ const Missions = () => (
   <div className="table-container">
     <table>
       <thead className="column-header">
-        <tr className="column-row">
+        <tr className="header-column-row">
           <th className="column-data">Mission</th>
           <th className="column-data">Description</th>
           <th className="column-data">Membership</th>
@@ -13,7 +13,7 @@ const Missions = () => (
         </tr>
       </thead>
       <tbody>
-        <tr className="column-row">
+        <tr className="body-column-row">
           <td className="column-data-body">1</td>
           <td className="column-data-body">1</td>
           <td className="column-data-body">
