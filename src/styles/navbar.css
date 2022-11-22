@@ -6,6 +6,10 @@
   gap: 1em;
 }
 
+a {
+  text-decoration: none;
+}
+
 .space-hub-logo {
   width: 10vw;
 }
@@ -35,10 +39,6 @@
   padding-left: 1em;
 }
 
-.links:hover {
-  text-decoration: underline;
-}
-
-.links:active {
+.active {
   text-decoration: underline;
 }
