@@ -1,18 +1,16 @@
-import React from "react";
+import React from 'react';
 
-const Rocket = () => {
-  return (
-<div>
+const Rocket = () => (
   <div>
-    <img src="" alt="">
+    <div>
+      <img src="" alt="" />
+    </div>
+    <div>
+      <h2>title</h2>
+      <p>hello hello </p>
+      <input type="button" value="Reserve Rocket" />
+    </div>
   </div>
-<div>
-  <h2></h2>
-  <p></p>
-  <input type="button" value="Reserve Rocket" />
-</div>
-</div>
-  );
-};
+);
 
 export default Rocket;
