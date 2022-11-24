@@ -1,11 +1,10 @@
-// import { combineReducers, configureStore } from '@reduxjs/toolkit';
-// import rocketSlice from './rockets/rocketSlice';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import rocketSlice from './rockets/rocketSlice';
 
-// const reducer = combineReducers({
-//   GetBookSlice: bookSlice,
-//   category: categoryReducer,
-// });
+const reducer = combineReducers({
+  GetrocketSlice: rocketSlice,
+});
 
-// const store = configureStore({ reducer });
+const store = configureStore({ reducer });
 
-// export default store;
+export default store;
