@@ -1,34 +1,52 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { Axios } from 'axios';
+import axios from 'axios';
 
 const initialState = {
-  data: {},
-  status: 'idle',
+  rocket: [],
 };
 
-const fetchData = createAsyncThunk('RESERVE_ROCKETS', async () => {
-  const getData = Axios.get('https://api.spacexdata.com/v3/rockets');
-  const rocketList = await getData.json();
-  return rocketList;
-});
+const URL = 'https://api.spacexdata.com/v3/rockets';
+export const fetchData = createAsyncThunk(
+  'RESERVE_ROCKETS', async () => {
+    const getData = await axios.get(URL);
+    console.log(getData.data);
+    return getData.data;
+  },
+);
 
 const rocketSlice = createSlice({
   name: 'GetrocketSlice',
   initialState,
   reducers: {
-    rocketReserve: (state, action) => state.map((rocket) => {
-      if (rocket.rocket_id === action.payload) {
-        return { ...rocket, reserved: !rocket.reserved };
-      }
-      return rocket;
+    rocketReserve: (state, action) => ({
+      ...state,
+      rocket: state.rocket.map((thisRocket) => {
+        if (thisRocket.rocket_id === action.payload) {
+          return {
+            ...thisRocket,
+            reserved: !thisRocket.reserved,
+          };
+        }
+        return thisRocket;
+      }),
     }),
   },
-  extraReducers: (builder) => {
-    builder.addCase(fetchData.fulfilled, (state, action) => action.payload);
+  extraReducers: {
+    [fetchData.fulfilled]: (state, action) => {
+      // eslint-disable-next-line no-param-reassign
+      state.rocket = action.payload.map((rock) => ({
+        ...state.rocket,
+        rocket_id: rock.rocket_id,
+        rocket_name: rock.rocket_name,
+        description: rock.description,
+        flickr_images: rock.flickr_images,
+        reserved: false,
+      }));
+    },
   },
 });
 
 const { actions, reducer } = rocketSlice;
 const { rocketReserve } = actions;
-export { actions, fetchData, rocketReserve };
+export { actions, rocketReserve };
 export default reducer;

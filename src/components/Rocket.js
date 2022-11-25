@@ -1,46 +1,49 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
-import { rocketReserve } from '../redux/rockets/rocketSlice';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchData, rocketReserve } from '../redux/rockets/rocketSlice';
 
-const Rocket = (props) => {
-  const { rocketelement } = props;
+const Rocket = () => {
+  const fetchRockets = useSelector((state) => state.GetrocketSlice);
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchData());
+  }, []);
+
+  const handleJoin = (rocketId) => {
+    dispatch(rocketReserve(rocketId));
+  };
+
   return (
     <div>
-      <div>
-        <img src={rocketelement.flickr_images[0]} alt="" />
-      </div>
-      <div>
-        <h2>{rocketelement.rocket_name}</h2>
-        <div>
-          <span>
-            {rocketelement.reserved ? (
-              <span className="badge">Reserved</span>
-            ) : (
-              ''
-            )}
-          </span>
-          <p>{rocketelement.description}</p>
+      {fetchRockets.data.map((rocket) => (
+        <div key={rocket.rocket_id}>
+          <div>
+            <img src={fetchRockets.rocket.flickr_images} alt="" />
+          </div>
+          <div>
+            <h2>{fetchRockets.rocket.rocket_name}</h2>
+            <div>
+              <span>
+                {fetchRockets.reserved ? (
+                  <span className="badge">Reserved</span>
+                ) : (
+                  ''
+                )}
+              </span>
+              <p>{fetchRockets.rocket.description}</p>
+            </div>
+            <input
+              type="button"
+              onClick={() => handleJoin(rocketReserve(fetchRockets.rocket_id))}
+              value={
+                fetchRockets.reserved ? 'Cancel Reservation' : 'Reserve Rocket'
+              }
+            />
+          </div>
         </div>
-        <input
-          type="button"
-          onClick={() => dispatch(rocketReserve(rocketelement.rocket_id))}
-          value={rocketelement.reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
-        />
-      </div>
+      ))}
     </div>
   );
-};
-
-Rocket.propTypes = {
-  rocketelement: PropTypes.shape({
-    rocket_id: PropTypes.string,
-    rocket_name: PropTypes.string,
-    description: PropTypes.string,
-    flickr_images: PropTypes.arrayOf(PropTypes.string),
-    reserved: PropTypes.bool,
-  }).isRequired,
 };
 
 export default Rocket;
