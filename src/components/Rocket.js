@@ -29,7 +29,7 @@ const Rocket = ({ rocket }) => {
           {' '}
           {rocket.description}
         </p>
-        <button className="resv-btn" type="button" onClick={handleReservation}>
+        <button className={rocket.reserved ? 'not-resv' : 'resv-btn'} type="button" onClick={handleReservation}>
           {rocket.reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
         </button>
       </div>
