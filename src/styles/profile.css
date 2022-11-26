@@ -2,4 +2,17 @@
   border: solid 1px #ddd;
   width: 40%;
   margin: 2em auto;
+  padding: 1em 0 0;
+}
+
+.rocket-list {
+  padding: 0;
+}
+
+.reserve-li {
+  padding: 1em;
+  border-bottom: 1px solid #ddd;
+  /* text-decoration: none; */
+  list-style: none;
+  text-align: center;
 }
