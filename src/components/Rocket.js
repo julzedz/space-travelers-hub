@@ -1,49 +1,49 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchData, rocketReserve } from '../redux/rockets/rocketSlice';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import {
+  reserveRocket, cancelRocket,
+} from '../redux/rockets/rocketSlice';
 
-const Rocket = () => {
-  const fetchRockets = useSelector((state) => state.GetrocketSlice);
+const Rocket = ({ rocket }) => {
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchData());
-  }, []);
 
-  const handleJoin = (rocketId) => {
-    dispatch(rocketReserve(rocketId));
+  const handleReservation = () => {
+    if (rocket.reserved) {
+      dispatch(cancelRocket(rocket.id));
+    } else {
+      dispatch(reserveRocket(rocket.id));
+    }
   };
 
   return (
-    <div>
-      {fetchRockets.data.map((rocket) => (
-        <div key={rocket.rocket_id}>
-          <div>
-            <img src={fetchRockets.rocket.flickr_images} alt="" />
-          </div>
-          <div>
-            <h2>{fetchRockets.rocket.rocket_name}</h2>
-            <div>
-              <span>
-                {fetchRockets.reserved ? (
-                  <span className="badge">Reserved</span>
-                ) : (
-                  ''
-                )}
-              </span>
-              <p>{fetchRockets.rocket.description}</p>
-            </div>
-            <input
-              type="button"
-              onClick={() => handleJoin(rocketReserve(fetchRockets.rocket_id))}
-              value={
-                fetchRockets.reserved ? 'Cancel Reservation' : 'Reserve Rocket'
-              }
-            />
-          </div>
-        </div>
-      ))}
+    <div className="rocket">
+      <div className="rocket-image">
+        <img src={rocket.image} alt={rocket.name} />
+      </div>
+      <div className="rocket-info">
+        <h3>{rocket.name}</h3>
+        <p>
+          {rocket.reserved ? 'Reserved' : ''}
+          {' '}
+          {rocket.description}
+        </p>
+        <button type="button" onClick={handleReservation}>
+          {rocket.reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
+        </button>
+      </div>
     </div>
   );
+};
+
+Rocket.propTypes = {
+  rocket: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    reserved: PropTypes.bool.isRequired,
+  }).isRequired,
 };
 
 export default Rocket;
