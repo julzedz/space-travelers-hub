@@ -12,6 +12,7 @@
 .reserve-li {
   padding: 1em;
   border-bottom: 1px solid #ddd;
+
   /* text-decoration: none; */
   list-style: none;
   text-align: center;

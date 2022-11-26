@@ -32,7 +32,7 @@
 }
 
 .resv-btn {
-  padding: .8em;
+  padding: 0.8em;
   color: white;
   background-color: #458cf6;
   border: none;
@@ -46,7 +46,7 @@
 }
 
 .not-resv {
-  padding: .8em;
+  padding: 0.8em;
   background-color: #fff;
   color: #a9a9a9;
   border-radius: 3px;
@@ -56,7 +56,7 @@
 
 .resv {
   background-color: #30ba8c;
-  padding: .2em;
+  padding: 0.2em;
   border-radius: 5px;
   color: #efeff0;
   font-weight: bold;
