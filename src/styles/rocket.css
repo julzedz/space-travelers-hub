@@ -21,7 +21,6 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding-left: 2em;
-
 }
 
 .description {
@@ -57,7 +56,8 @@
 
 .resv {
   background-color: #30ba8c;
-  padding: .1em;
+  padding: .2em;
+  border-radius: 5px;
+  color: #efeff0;
+  font-weight: bold;
 }
-
-
