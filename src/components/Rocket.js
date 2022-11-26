@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import {
   reserveRocket, cancelRocket,
 } from '../redux/rockets/rocketSlice';
+import '../styles/rocket.css';
 
 const Rocket = ({ rocket }) => {
   const dispatch = useDispatch();
@@ -19,16 +20,16 @@ const Rocket = ({ rocket }) => {
   return (
     <div className="rocket">
       <div className="rocket-image">
-        <img src={rocket.image} alt={rocket.name} />
+        <img className="rocketimg" src={rocket.image} alt={rocket.name} />
       </div>
       <div className="rocket-info">
-        <h3>{rocket.name}</h3>
-        <p>
-          {rocket.reserved ? 'Reserved' : ''}
+        <h3 className="title">{rocket.name}</h3>
+        <p className="description">
+          <span className="resv">{rocket.reserved ? 'Reserved' : ''}</span>
           {' '}
           {rocket.description}
         </p>
-        <button type="button" onClick={handleReservation}>
+        <button className="resv-btn" type="button" onClick={handleReservation}>
           {rocket.reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
         </button>
       </div>

@@ -1,0 +1,60 @@
+.rocket {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5em 3em;
+}
+
+.rocket-image {
+  width: 20%;
+}
+
+.rocketimg {
+  width: 100%;
+}
+
+.rocket-info {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-left: 2em;
+
+}
+
+.description {
+  text-align: left;
+}
+
+.title {
+  margin: 0;
+}
+
+.resv-btn {
+  padding: .8em;
+  color: white;
+  background-color: #458cf6;
+  border: none;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.resv-btn:hover {
+  cursor: pointer;
+  background-color: #1659bd;
+}
+
+.resv-btn:active {
+  background-color: #fff;
+  color: #a9a9a9;
+  border: 1px solid #a9a9a9;
+}
+
+.resv {
+  background-color: #30ba8c;
+  padding: .1em;
+}
+
+
