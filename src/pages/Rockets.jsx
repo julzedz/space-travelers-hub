@@ -15,7 +15,6 @@ const Rockets = () => {
       dispatch(fetchRockets());
       didInitialRender = true;
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
