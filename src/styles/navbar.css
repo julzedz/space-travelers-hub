@@ -1,0 +1,37 @@
+.logo-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.space-hub-logo {
+  width: 10vw;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  color: black;
+}
+
+.nav-links > * {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1vh 5vw;
+  border-bottom: 1px solid grey;
+}
+
+.active {
+  text-decoration: underline;
+  color: blue;
+}
