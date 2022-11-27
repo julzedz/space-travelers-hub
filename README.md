@@ -20,7 +20,6 @@
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq)
 - [📝 License](#license)
 
 # 📖 [Space Traveler's Hub] <a name="about-project"></a>
@@ -47,7 +46,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](#)
+- [Live Demo Link](https://poetic-meringue-03fa6d.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
