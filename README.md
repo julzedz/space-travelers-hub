@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
+  <img src="./assest/murple_logo.png" alt="logo" width="140"  height="auto" />
   <br/>
 
   <h3><b>Microverse README Template</b></h3>
@@ -22,7 +22,7 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-# 📖 [Space Traveler's Hub] <a name="about-project"></a>
+# 📖 Space Traveler's Hub <a name="about-project"></a>
 
 **Space Traveler's Hub** is a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
 
@@ -76,6 +76,7 @@ To get a local copy up and running, follow these steps.
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/julzedz/space-travelers-hub/issues).
+
 
 ## ⭐️ Show your support <a name="support"></a>
 
